@@ -1,0 +1,54 @@
+article {
+    width: 320px;
+    height: 550px;
+    background: linear-gradient(180deg,#eca34e,rgba(238, 20, 165, 0.904))fixed;
+    margin: 5% auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 129, 213, 0.925);
+}
+.title {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
+.singer {
+    text-align: center;
+}
+.icon {
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    background: url("../image/icon-test.png") no-repeat;
+}
+
+.lrc {
+    width: 100%;
+    height: 220px;
+    margin: 10px auto;
+    overflow: hidden;
+    text-align: center;
+}
+.lrc p {
+    line-height: 20px;
+    font-size: 15px;
+    position: relative;
+}
+
+.content {
+    position: relative;
+}
+
+.icon.rotate {
+    -webkit-animation: rot 5s linear infinite;
+    animation: rot 5s linear infinite;
+}
+
+@keyframes rot {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
