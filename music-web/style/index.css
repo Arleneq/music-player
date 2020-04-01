@@ -32,7 +32,6 @@ article {
 .lrc p {
     line-height: 20px;
     font-size: 15px;
-    position: relative;
 }
 
 .content {
@@ -51,4 +50,17 @@ article {
     to {
         transform: rotate(360deg);
     }
+}
+
+
+.note {
+    position: absolute;
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 15%;
+    border: #fdc6ff62 solid ;
+    box-shadow: 0 0 8px rgba(255, 129, 213, 0.925);
+    z-index:999; 
+    background-color: #fff; 
+    padding: 5px;
 }
