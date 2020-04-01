@@ -29,7 +29,6 @@ btn.ondblclick = function(){
 
 var lrc = txt.innerHTML;
 var lrcArr = lrc.split("[");
-// console.log(lrcArr);
 var html = "";
 for (var i = 0 ; i < lrcArr.length ; i++){
     var arr = lrcArr[i].split("]");
@@ -38,7 +37,7 @@ for (var i = 0 ; i < lrcArr.length ; i++){
     var ms = timer[0] * 60 + timer[1] * 1
     var text = arr[1];
     if (text){
-        html += "<p id=" + ms +">"+ text +"<p>";
+        html += "<p id=" + ms +">"+ text +"</p>";
     }
 
     console.log(html);
@@ -60,3 +59,34 @@ myMusic.addEventListener("timeupdate",function(){
         }
     }
 })
+window.onload=init;		
+function init() {			
+    var o=document.getElementById('box');			
+    var speed=5;//速度			
+    var timemouse;			//鼠标事件			
+    o.onmouseenter=function(){				
+        clearInterval(timemouse);//清除定时器				
+        timemouse=setInterval(moveRight,50);			
+    };			//鼠标离开事件			
+    o.onmouseleave=function(){				
+        clearInterval(timemouse);//清除定时器				
+        timemouse=setInterval(moveLeft,50);			
+    }; 			//滑块移动			
+    function moveRight(){				
+        var l=o.offsetLeft;//左边距				
+        if(l>=0){					
+            clearInterval(timemouse);//停止				
+        }else{					
+            o.style.left=l+speed+'px';	//移动				
+        }							
+    }			//向左移动			
+    function moveLeft(){							
+        var l=o.offsetLeft;//左边距						
+        if(l<=-200){					
+            clearInterval(timemouse);				
+        }else{					
+            o.style.left=l-speed+'px';					
+        }			
+    }		
+}
+
