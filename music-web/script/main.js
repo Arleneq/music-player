@@ -1,6 +1,6 @@
 var btn = document.getElementsByClassName("icon")[0];
 var myMusic = document.getElementById("myMusic");
-var txt = document.getElementById("text");
+var txt = document.getElementById("txt");
 var con = document.getElementsByClassName("content")[0];
 var mark = true;
 
@@ -27,9 +27,9 @@ btn.ondblclick = function(){
     }
 }
 
-
-var lrc = txt.value;
+var lrc = txt.innerHTML;
 var lrcArr = lrc.split("[");
+// console.log(lrcArr);
 var html = "";
 for (var i = 0 ; i < lrcArr.length ; i++){
     var arr = lrcArr[i].split("]");
@@ -41,6 +41,7 @@ for (var i = 0 ; i < lrcArr.length ; i++){
         html += "<p id=" + ms +">"+ text +"<p>";
     }
 
+    console.log(html);
     con.innerHTML = html;
 }
 
