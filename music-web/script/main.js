@@ -4,6 +4,8 @@ var txt = document.getElementById("txt");
 var con = document.getElementsByClassName("content")[0];
 var mark = true;
 
+var num = 0;
+
 btn.onclick = function(){
     if (mark){
         this.className += " rotate";
@@ -25,6 +27,7 @@ btn.ondblclick = function(){
         myMusic.load();
         mark = true;
         con.style.top = 0+"px";
+        num = 0;
     }
 }
 
@@ -44,7 +47,6 @@ for (var i = 0 ; i < lrcArr.length ; i++){
     con.innerHTML = html;
 }
 
-var num = 0;
 var op = con.getElementsByTagName("p");
 myMusic.addEventListener("timeupdate",function(){
     var curTime = parseInt(this.currentTime);
